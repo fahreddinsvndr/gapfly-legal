@@ -1,0 +1,28 @@
+:root { --bg:#f6f3ec; --fg:#1f1d1a; --muted:#5b574f; --accent:#b4440f; --accent2:#2b2a27; --card:#fffdf8; --line:#ddd6c7; --mark:#0b6bcb; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#161513; --fg:#ece8df; --muted:#a8a296; --accent:#ff9a62; --accent2:#e8e3d8; --card:#1f1d1a; --line:#37342e; --mark:#6cb4ff; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+  font:16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Arabic", "Noto Sans Devanagari", "Noto Sans Thai", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC", Helvetica, Arial, sans-serif; }
+main { max-width: 780px; margin: 0 auto; padding: 36px 16px 64px; }
+header { margin-bottom: 24px; }
+h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; }
+h2 { font-size: 20px; line-height: 1.35; margin: 32px 0 8px; color: var(--accent2); border-bottom: 2px solid var(--line); padding-bottom: 4px; }
+h2:first-child { margin-top: 0; }
+h3 { font-size: 17px; margin: 22px 0 4px; }
+.muted { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
+a { color: var(--accent); }
+a:focus-visible { outline: 3px solid var(--mark); outline-offset: 2px; border-radius: 4px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 22px; }
+ul { padding-inline-start: 22px; }
+li { margin: 4px 0; }
+.langs { display: flex; flex-wrap: wrap; gap: 6px; }
+.langs a { display: inline-block; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--card); text-decoration: none; font-size: 14px; font-weight: 600; }
+.langs a[aria-current] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.skip { position: absolute; inset-inline-start: -9999px; }
+.skip:focus { inset-inline-start: 8px; top: 8px; background: var(--card); padding: 6px 10px; z-index: 5; }
+.chooser { list-style: none; padding: 0; columns: 2; column-gap: 24px; }
+.chooser li { break-inside: avoid; }
+@media (max-width: 480px) { h1 { font-size: 24px; } .card { padding: 18px 16px; } .chooser { columns: 1; } }
